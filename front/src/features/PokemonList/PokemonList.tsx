@@ -2,24 +2,24 @@ import type React from "react";
 
 import { DataGrid } from "@mui/x-data-grid";
 
-import { useDetail } from "./hooks/useDetail";
+import { useRows } from "./hooks/useRows";
 import { columns } from "./lib/columns";
 
 export function PokemonList(): React.JSX.Element {
-  const { detail, error, isLoading } = useDetail({ id: 1 });
+  const { data, error, isLoading } = useRows();
 
   if (isLoading) {
     return <p>Loading...</p>;
   }
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return <p>fetch error</p>;
   }
 
   return (
     <>
       <DataGrid
         columns={columns}
-        rows={[detail]}
+        rows={data}
         density="compact"
         showCellVerticalBorder
       />
