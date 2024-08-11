@@ -1,26 +1,12 @@
 import useSWR from "swr";
+
+import { responseToRow } from "../lib/responseToRow";
 import type { Row } from "../types/row";
 
 interface Returns {
   data: Row[] | undefined;
   error: Error | undefined;
   isLoading: boolean;
-}
-
-interface Language {
-  name: string;
-  url: string;
-}
-
-interface Name {
-  language: Language;
-  name: string;
-}
-
-function getJapaneseName(names: Name[]): string {
-  const japaneseName = names.find((name) => name.language.name === "ja");
-
-  return japaneseName ? japaneseName.name : "";
 }
 
 async function rowFetcher(id: number): Promise<Row> {
@@ -32,11 +18,7 @@ async function rowFetcher(id: number): Promise<Row> {
   const pokemonResult = await fetch(pokemonUrl);
   const pokemon = await pokemonResult.json();
 
-  return {
-    id: species.id,
-    name: getJapaneseName(species.names),
-    image: pokemon.sprites.versions["generation-vii"].icons.front_default,
-  };
+  return responseToRow(species, pokemon);
 }
 
 async function fetcher(): Promise<Row[]> {
