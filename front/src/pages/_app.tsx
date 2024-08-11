@@ -7,11 +7,13 @@ import "@fontsource/roboto/700.css";
 import { useTheme } from "@mui/material";
 
 export default function App() {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <>
-      <main style={{ height: "100vh", width: "100%", padding: theme.spacing(1) }}>
+      <main
+        style={{ height: "100vh", width: "100%", padding: theme.spacing(1) }}
+      >
         <Outlet />
       </main>
     </>

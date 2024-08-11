@@ -22,7 +22,7 @@ async function rowFetcher(id: number): Promise<Row> {
 }
 
 async function fetcher(): Promise<Row[]> {
-  const length = 10;
+  const length = 1000;
   const promises: Promise<Row>[] = [];
 
   for (let id = 1; id <= length; id++) {
