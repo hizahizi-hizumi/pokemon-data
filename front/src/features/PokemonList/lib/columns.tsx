@@ -2,6 +2,7 @@ import type { GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 
 import { ImageCell } from "@/features/PokemonList/components/ImageCell";
 import type { Row } from "@/features/PokemonList/types/row";
+import { Types } from "../components/Types";
 
 export const columns: GridColDef[] = [
   {
@@ -26,5 +27,8 @@ export const columns: GridColDef[] = [
   {
     field: "types",
     headerName: "タイプ",
+    renderCell: (params: GridRenderCellParams<Row>) => (
+      <Types types={params.value} />
+    ),
   },
 ];
