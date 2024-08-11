@@ -8,9 +8,6 @@ import { columns } from "./lib/columns";
 export function PokemonList(): React.JSX.Element {
   const { data, error, isLoading } = useRows();
 
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
   if (error) {
     return <p>fetch error</p>;
   }
@@ -22,6 +19,7 @@ export function PokemonList(): React.JSX.Element {
         rows={data}
         density="compact"
         showCellVerticalBorder
+        loading={isLoading}
       />
     </>
   );
