@@ -34,4 +34,40 @@ export const columns: GridColDef[] = [
       <Types types={params.value} />
     ),
   },
+  {
+    field: "hp",
+    headerName: "HP",
+    align: "right",
+    width: 70,
+  },
+  {
+    field: "attack",
+    headerName: "攻撃",
+    align: "right",
+    width: 100,
+  },
+  {
+    field: "defense",
+    headerName: "防御",
+    align: "right",
+    width: 100,
+  },
+  {
+    field: "specialAttack",
+    headerName: "特攻",
+    align: "right",
+    width: 100,
+  },
+  {
+    field: "specialDefense",
+    headerName: "特防",
+    align: "right",
+    width: 100,
+  },
+  {
+    field: "speed",
+    headerName: "素早さ",
+    align: "right",
+    width: 100,
+  },
 ];

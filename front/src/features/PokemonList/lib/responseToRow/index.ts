@@ -3,6 +3,7 @@ import type { PokemonResponse } from "@/types/PokemonResponse";
 import type { SpeciesResponse } from "@/types/SpeciesResponse";
 import { getImage } from "./getImage";
 import { getJapaneseName } from "./getJapaneseName";
+import { getStats } from "./getStats";
 
 export function responseToRow(
   species: SpeciesResponse,
@@ -13,5 +14,6 @@ export function responseToRow(
     name: getJapaneseName(species.names),
     image: getImage(pokemon),
     types: pokemon.types.map((type) => type.type.name),
+    ...getStats(pokemon),
   };
 }

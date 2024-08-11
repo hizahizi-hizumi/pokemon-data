@@ -1,3 +1,4 @@
+import type { Stat } from "./stat";
 import type { Type } from "./type";
 
 export interface PokemonResponse {
@@ -375,11 +376,11 @@ interface GenerationViii {
 interface StatOverview {
   base_stat: number;
   effort: number;
-  stat: Stat;
+  stat: StatWithUrl;
 }
 
-interface Stat {
-  name: string;
+interface StatWithUrl {
+  name: Stat;
   url: string;
 }
 
