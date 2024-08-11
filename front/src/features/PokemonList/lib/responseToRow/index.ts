@@ -1,6 +1,7 @@
 import type { Row } from "@/features/PokemonList/types/row";
 import type { PokemonResponse } from "@/types/PokemonResponse";
 import type { SpeciesResponse } from "@/types/SpeciesResponse";
+import { getImage } from "./getImage";
 import { getJapaneseName } from "./getJapaneseName";
 
 export function responseToRow(
@@ -10,7 +11,7 @@ export function responseToRow(
   return {
     id: species.id,
     name: getJapaneseName(species.names),
-    image: pokemon.sprites.versions["generation-viii"].icons.front_default,
+    image: getImage(pokemon),
     types: pokemon.types.map((type) => type.type.name),
   };
 }
