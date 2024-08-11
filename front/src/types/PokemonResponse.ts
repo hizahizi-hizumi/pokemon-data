@@ -1,3 +1,5 @@
+import { Type } from "./type";
+
 export interface PokemonResponse {
   abilities: AbilityOverview[];
   base_experience: number;
@@ -383,10 +385,10 @@ interface Stat {
 
 interface TypeOverview {
   slot: number;
-  type: Type;
+  type: TypeWithUrl;
 }
 
-interface Type {
-  name: string;
+interface TypeWithUrl {
+  name: Type;
   url: string;
 }

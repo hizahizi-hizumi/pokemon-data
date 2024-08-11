@@ -23,4 +23,8 @@ export const columns: GridColDef[] = [
     field: "name",
     headerName: "名前",
   },
+  {
+    field: "types",
+    headerName: "タイプ",
+  },
 ];
