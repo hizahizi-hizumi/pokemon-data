@@ -18,11 +18,14 @@ export const columns: GridColDef[] = [
   },
   {
     field: "id",
-    headerName: "番号",
+    headerName: "図鑑No",
+    align: "right",
+    width: 70,
   },
   {
     field: "name",
     headerName: "名前",
+    width: 110,
   },
   {
     field: "types",
